@@ -22,6 +22,12 @@ where Country != 'USA'**/
 --where Country = 'Brazil' 
 
 --sales_agents.sql: Provide a query showing only the Employees who are Sales Agents
-select *
+/**select *
 from Employee
-where Title = 'Sales Support Agent'
+where Title = 'Sales Support Agent'**/
+
+--unique_invoice_countries.sql: Provide a query showing a unique/distinct list of 
+--billing countries from the Invoice table.
+
+select distinct Invoice.BillingCountry
+from Invoice
