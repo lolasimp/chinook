@@ -29,5 +29,29 @@ where Title = 'Sales Support Agent'**/
 --unique_invoice_countries.sql: Provide a query showing a unique/distinct list of 
 --billing countries from the Invoice table.
 
-select distinct Invoice.BillingCountry
-from Invoice
+--select distinct Invoice.BillingCountry
+--from Invoice
+
+--sales_agent_invoices.sql: Provide a query that shows the invoices associated with each sales agent.
+--The resultant table should include the Sales Agent's full name.
+--SELECT *
+--FROM   T1
+--       INNER JOIN T2
+--         ON T2.C = T1.C
+--       INNER JOIN T3
+--                  LEFT JOIN T4
+--                    ON T4.C = T3.C
+--         ON T3.C = T2.C 
+select FullName = Employee.FirstName + ' ' + Employee.LastName
+from Customer 
+right join Employee
+on Employee.FirstName = Customer.FirstName
+
+where Employee.Title like '%agent%'
+
+
+--total_invoices_{year}.sql: How many Invoices were there in 2009 and 2011?
+
+--select *
+--from Invoice
+--where CustomerId = '1'
